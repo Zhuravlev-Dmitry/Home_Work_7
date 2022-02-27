@@ -1,11 +1,18 @@
 package org.example;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-
+@Story("Заказ товара авторизованного пользователя")
 public class OrderGoodsTest extends AbstractClassTest {
     @Test
+    @DisplayName("Успешный заказ товара")
+    @Description("Тест проверяет успешный заказ товара")
+    @Link("https://www.trxtraining.ru/")
+    @Issue("https://www.trxtraining.ru/shop/")
+    @Severity(SeverityLevel.BLOCKER)
     void checkAuthorUserOrder (){
         new TrxMainPage(getWebDriver()).goToAccountPage();
         Assertions
